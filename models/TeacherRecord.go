@@ -25,7 +25,7 @@ func GetTeacherRecords(useCase string) ([]*TeacherRecord, error) {
 	var teacherRecords []*TeacherRecord
 
 	if useCase != "" {
-		tx = tx.Where("use_case = (?)", useCase)
+		tx = tx.Where("use_case = ?", useCase)
 	}
 
 	tx.Find(&teacherRecords)
