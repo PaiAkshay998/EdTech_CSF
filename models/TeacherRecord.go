@@ -11,7 +11,6 @@ type TeacherRecord struct {
 	ContentDescription string `gorm:"column:content_description;not null" json:"content_description"`
 	ContentLink        string `gorm:"column:content_link;not null" json:"content_link"`
 	UseCase            string `gorm:"column:use_case;not null" json:"use_case"`
-	Subject            string `gorm:"column:subject;not null" json:"subject"`
 }
 
 // TableName returns MySQL table name for this model
@@ -20,13 +19,13 @@ func (TeacherRecord) TableName() string {
 }
 
 // GetTeacherRecords returns records fetched from database
-func GetTeacherRecords(subjectArray []string) ([]*TeacherRecord, error) {
+func GetTeacherRecords(useCase string) ([]*TeacherRecord, error) {
 	db := utils.GetDB()
-	tx := db.Model(&StudentRecord{})
+	tx := db.Model(&TeacherRecord{})
 	var teacherRecords []*TeacherRecord
 
-	if len(subjectArray) != 0 {
-		tx = tx.Where("subject in (?)", subjectArray)
+	if useCase != "" {
+		tx = tx.Where("use_case = (?)", useCase)
 	}
 
 	tx.Find(&teacherRecords)
