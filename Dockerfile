@@ -10,5 +10,6 @@ RUN apt-get update && \
 
 WORKDIR /go/src/github.com/PaiAkshay998/EdTech_CSF
 ADD . /go/src/github.com/PaiAkshay998/EdTech_CSF
+EXPOSE 6002
 
-CMD["./testing.sh"]
+CMD ["/bin/bash", "testing.sh"]

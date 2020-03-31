@@ -23,7 +23,6 @@ done
 
 
 echo "#### Running Migrations ####"
-migrate -url "mysql://root:$dbPass@/tcp(db:3306)/edtech_csf" -path ./migrations up
-
+migrate -url "mysql://root:$dbPass@tcp(db:3306)/edtech_csf" -path ./migrations up
 echo "#### Starting Server ####"
 go run main.go
