@@ -10,6 +10,8 @@ services:
       - "6002:8000"
     depends_on:
       - db
+    environment:
+      EDTECH_STAGE: "PROD"
   db:
     container_name: edtech_csf_db
     image: mysql:5.7

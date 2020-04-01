@@ -33,7 +33,7 @@ var TestConfig = &Config{
 	LogLevel:    "debug",
 	DbUser:      "root",
 	DbPassword:  "root",
-	DbHost:      "tcp(db:3306)",
+	DbHost:      "",
 	DbName:      "edtech_csf",
 	ServerPort:  ":8000",
 	CacheSize:   1000,
