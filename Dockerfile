@@ -12,4 +12,4 @@ WORKDIR /go/src/github.com/PaiAkshay998/EdTech_CSF
 ADD . /go/src/github.com/PaiAkshay998/EdTech_CSF
 EXPOSE 6002
 
-CMD ["/bin/bash", "testing.sh"]
+CMD ["/bin/bash", "docker-entry.sh"]
