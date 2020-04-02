@@ -29,22 +29,22 @@
         <div class="three wide column custom-font-size">Eng / हिं </div>
       </div>
 
+      <div id="homepage" class="ui grid">
+        <div class="row center aligned custom-text middle aligned ">This website is an initiative by MHRD to provide access to free content for students and teachers so that learning can effectively take place at home. </div>
+         <div class="row ui stackable grid middle aligned">
+        <div class="two wide column"></div>
+        <div class="four wide column overflow custom-click-box"><a onClick='showFilters(1);' class="student custom-link">Click here if you are a student/parent</a></div>
+        <div class="four wide column"></div>
+        <div class="four wide column overflow custom-click-box"><a onClick='showFilters(0);' class="teacher custom-link">Click here if you are a teacher</a></div>
+      </div>
+    </div>
+
+      <div id="main" class = "custom-hidden">
       <div class="row custom-height-75">
         <!-- FILTER COLUMN -->
         <div id="filter-column" class="four wide column custom-border-radius custom-fixed-size">
           <div class="center aligned row ">
             <h2>Filters</h2>
-          </div>
-
-          <div class="custom-margin center aligned two column row">
-            <div class="right aligned column custom-font-size">I want content for</div>
-            <div class="left aligned column">
-              <select id="user-dropdown" class="ui fluid dropdown">
-                <option value="">Select</option>
-                <option value=1>Student</option>
-                <option value=0>Teacher</option>
-              </select>
-            </div>
           </div>
 
           <div id="grade-row" class="center aligned two column row custom-margin custom-hidden">
