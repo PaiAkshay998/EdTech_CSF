@@ -5,7 +5,11 @@ const STUDENT = 1;
 showFilters = (val) => {
   $('#homepage').addClass('custom-hidden');
   $('#main').removeClass('custom-hidden');
+  user = parseInt(val);
+  $('#user-dropdown').dropdown('set selected', [val]);
+}
 
+  userDropDownChange = (val) => {
   user = parseInt(val);
   $('#submit-row').removeClass('custom-hidden');
   if (user == TEACHER) {
@@ -200,7 +204,9 @@ onSearch = () => {
 $("#search-button").click(onSearch);
 
 
-
+$('#user-dropdown').dropdown({
+   onChange: userDropDownChange
+});
 $('#grade-dropdown').dropdown();
 $('#subject-dropdown').dropdown();
 $('#usecase-dropdown').dropdown();

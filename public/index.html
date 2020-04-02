@@ -47,7 +47,18 @@
             <h2>Filters</h2>
           </div>
 
-          <div id="grade-row" class="center aligned two column row custom-margin custom-hidden">
+          <div class="custom-margin center aligned two column row">
+            <div class="right aligned column custom-font-size">I want content for</div>
+            <div class="left aligned column">
+              <select id="user-dropdown" class="ui fluid dropdown">
+                <option value="">Select</option>
+                <option value=1>Student</option>
+                <option value=0>Teacher</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="grade-row" class="center aligned two column row custom-margin ">
             <div class="right aligned column">Who are currently studying in grade</div>
             <div class="left aligned column">
               <select id="grade-dropdown" name="grade-select" class="ui fluid search selection dropdown">
