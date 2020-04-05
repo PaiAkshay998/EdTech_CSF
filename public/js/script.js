@@ -24,8 +24,10 @@ showFilters = (val) => {
 
    gradeDropDownChange = (val) => {
      grade = parseInt(val);
-     if(grade != 14 && grade !=15){
-         $('#subject-row').removeClass('custom-hidden');
+     if (grade != 14 && grade != 15){
+        $('#subject-row').removeClass('custom-hidden');
+     } else {
+      $('#subject-row').addClass('custom-hidden');
      }
    }
 
@@ -56,7 +58,7 @@ convertGrade = (grade) => {
   else if (grade == "15")
     return "Read/Write";
   else
-    return grade;
+    return `Grade ${grade}`;
 }
 
 uniqueList = (dataList) => {
@@ -180,7 +182,7 @@ populateStudentData = (data) => {
     let element = `
     <div onclick="openInNewTab('${linkToUse}');" class="row custom-data-box custom-margin custom-pointer">
       <div class="row custom-forced-width"><div class="column"><h2>${content_title}</h2></div></div>
-      <div class="row custom-forced-width"><div class="column"><h5>Grade ${content_grade.join(", ")}</h5></div></div>
+      <div class="row custom-forced-width"><div class="column"><h5>${content_grade.join(", ")}</h5></div></div>
       <div class="row custom-forced-width custom-grey-font">${title_to_description[content_title]}</div>
       <div class="ui divider"></div>
       <div class="row custom-forced-width">
