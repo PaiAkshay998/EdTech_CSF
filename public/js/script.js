@@ -18,10 +18,16 @@ showFilters = (val) => {
     $('#grade-row').addClass('custom-hidden');
   } else if (user == STUDENT) {
     $('#usecase-row').addClass('custom-hidden');
-    $('#subject-row').removeClass('custom-hidden');
     $('#grade-row').removeClass('custom-hidden');
   }
 }
+
+   gradeDropDownChange = (val) => {
+     grade = parseInt(val);
+     if(grade != 14 && grade !=15){
+         $('#subject-row').removeClass('custom-hidden');
+     }
+   }
 
 openInNewTab = (link) => {
   window.open(link, '_blank');
@@ -220,7 +226,8 @@ $('#user-dropdown').dropdown({
    onChange: userDropDownChange
 });
 $('#grade-dropdown').dropdown({
-  "clearable": true
+  "clearable": true,
+  onChange: gradeDropDownChange
 });
 $('#subject-dropdown').dropdown({
   "clearable": true
