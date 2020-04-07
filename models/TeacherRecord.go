@@ -13,6 +13,7 @@ type TeacherRecord struct {
 	UseCase            uint32 `gorm:"column:use_case;not null" json:"use_case"`
 	Cost               string `gorm:"column:cost;not null" json:"cost"`
 	Device             uint32 `gorm:"column:device;not null" json:"device"`
+	Medium             string `gorm:"column:medium;not null" json:"medium"`
 }
 
 // TableName returns MySQL table name for this model
