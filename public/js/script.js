@@ -9,7 +9,7 @@ showFilters = (val) => {
   $('#user-dropdown').dropdown('set selected', [val]);
 }
 
-  userDropDownChange = (val) => {
+userDropDownChange = (val) => {
   user = parseInt(val);
   $('#submit-row').removeClass('custom-hidden');
   if (user == TEACHER) {
@@ -22,14 +22,14 @@ showFilters = (val) => {
   }
 }
 
-   gradeDropDownChange = (val) => {
-     grade = parseInt(val);
-     if (grade != 14 && grade != 15){
-        $('#subject-row').removeClass('custom-hidden');
-     } else {
-      $('#subject-row').addClass('custom-hidden');
-     }
-   }
+gradeDropDownChange = (val) => {
+  grade = parseInt(val);
+  if (grade != 14 && grade != 15){
+    $('#subject-row').removeClass('custom-hidden');
+  } else {
+  $('#subject-row').addClass('custom-hidden');
+  }
+}
 
 openInNewTab = (link) => {
   window.open(link, '_blank');
@@ -218,7 +218,8 @@ onSearch = () => {
     $.ajax({
       url: 'http://localhost:8000/searchTeacherMaterial',
       data: {
-        use_case: $('#usecase-dropdown').dropdown('get values')
+        use_case: $('#usecase-dropdown').dropdown('get values'),
+        medium: $('#medium-dropdown').dropdown('get values')
       },
       success: populateData,
     });
@@ -229,7 +230,8 @@ onSearch = () => {
       url: 'http://localhost:8000/searchStudentMaterial',
       data: {
         subject: $('#subject-dropdown').dropdown('get values'),
-        grade: grade
+        grade: grade,
+        medium: $('#medium-dropdown').dropdown('get values')
       },
       success: populateData,
     });
@@ -250,5 +252,9 @@ $('#subject-dropdown').dropdown({
   "clearable": true
 });
 $('#usecase-dropdown').dropdown({
+  "clearable": true
+});
+
+$('#medium-dropdown').dropdown({
   "clearable": true
 });

@@ -24,7 +24,7 @@ func (StudentRecord) TableName() string {
 }
 
 // GetStudentRecords returns records fetched from database
-func GetStudentRecords(grade uint32, subjectArray []string) ([]*StudentRecord, error) {
+func GetStudentRecords(grade uint32, subjectArray []string, mediumArray []string) ([]*StudentRecord, error) {
 	db := utils.GetDB()
 	tx := db.Model(&StudentRecord{})
 	var studentRecords []*StudentRecord
@@ -34,6 +34,9 @@ func GetStudentRecords(grade uint32, subjectArray []string) ([]*StudentRecord, e
 	}
 	if len(subjectArray) != 0 {
 		tx = tx.Where("subject in (?)", subjectArray)
+	}
+	if len(mediumArray) != 0 {
+		tx = tx.Where("medium in (?)", mediumArray)
 	}
 
 	tx.Find(&studentRecords)
