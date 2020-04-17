@@ -1,3 +1,11 @@
+.custom-disclaimer{
+  position: absolute !important;
+  bottom: 0% ;
+}
+
+.custom-small-text{
+  font-size: 12px !important;
+}
 
 .custom-wrapper{
   background-color: #F5F5F5 !important;
@@ -160,10 +168,14 @@
   .custom-description {
     display: none !important;
   }
+  .custom-disclaimer{
+    position: relative ! important;
+  }
 
 }
 
 @media only screen and (max-width: 600px) {
+
   .custom-wrapper{
     height: 150vh !important;
   }
