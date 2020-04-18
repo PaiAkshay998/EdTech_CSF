@@ -36,4 +36,11 @@ migrate -url "mysql://root:YOUR_MYSQL_ROOT_PASSWORD@/edtech_csf" -path ./migrati
 
 
 ## Docker usage instructions
-
+- Install [docker](https://docs.docker.com/engine/installation) and [docker-compose](https://docs.docker.com/compose/install).
+- Run `cp .env.example .env`. Fill in the *DB_NAME* and *DB_PASS* in *.env*. These are the credentials for the database container.
+- Use the same credentials in `Docker` section *config.json* (*DbName* and *DbPassword*) and *docker-entry.sh* (in the `migrate` command).
+- Run `docker-compose up`.
+- Once the containers are up, you can get shell access by using
+```
+docker exec -it <CONTAINER_ID> bash
+```
