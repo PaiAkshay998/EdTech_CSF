@@ -33,6 +33,12 @@ migrate -url "mysql://root:YOUR_MYSQL_ROOT_PASSWORD@/edtech_csf" -path ./migrati
 ```
 migrate -url "mysql://root:YOUR_MYSQL_ROOT_PASSWORD@/edtech_csf" -path ./migrations create migration_file_xyz
 ```
+# Preprocessing the data
+The script ```convert_data.py``` converts the input csv into the proper format for entering into the database.
+```
+python convert_data.py YOUR_INPUTFILE.csv YOUR_OUTPUTFILE.csv Student/Teacher
+```
+The Student/Teacher arguemt specifies whether these are Student records or Teacher records under preprocessing.
 
 
 ## Docker usage instructions
