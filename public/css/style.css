@@ -1,16 +1,24 @@
 .custom-disclaimer{
-  position: absolute !important;
-  bottom: 0% ;
+  position: fixed !important;
+  bottom: 1vh;
+  line-height: 1;
+}
+
+.custom-disclaimer-search{
+  bottom: 1vh;
+  line-height: 1;
+  position: fixed !important;
 }
 
 .custom-small-text{
-  font-size: 12px !important;
+  font-size: 9px !important;
 }
 
 .custom-wrapper{
   background-color: #F5F5F5 !important;
   opacity: 1;
   height: 110vh;
+  padding-bottom: 2rem;
 }
 
 .custom-navbar{
@@ -157,6 +165,11 @@
     height: 150vh !important;
   }
 
+  .custom-disclaimer-search{
+    position: relative ! important;
+    font-size: 7px !important;
+  }
+
   #filter-column {
     width: 40% !important;
   }
@@ -165,19 +178,25 @@
     width: 60% !important;
   }
 
+  .custom-disclaimer{
+    position: relative !important;
+    font-size: 7px !important;
+  }
+
   .custom-description {
     display: none !important;
-  }
-  .custom-disclaimer{
-    position: relative ! important;
   }
 
 }
 
 @media only screen and (max-width: 600px) {
-
   .custom-wrapper{
     height: 150vh !important;
+  }
+
+  .custom-disclaimer-search{
+    position: relative ! important;
+    font-size: 7px !important;
   }
 
   #filter-column {
@@ -187,6 +206,11 @@
   #data-column {
     width: 100% !important;
     margin-top: 20px;
+  }
+
+  .custom-disclaimer{
+    position: relative !important;
+    font-size: 7px !important;
   }
 
 }
